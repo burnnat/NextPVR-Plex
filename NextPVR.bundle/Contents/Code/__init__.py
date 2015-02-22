@@ -286,7 +286,7 @@ def PendingRecordingsMenu():
 
 ####################################################################################################
 #@route('/video/nextpvr/videoobject')
-def CreateVideoObject(url, title, summary, rating_key, playback_position, originally_available_at=None, duration=0, channel=None, container='mp2ts', include_container=False):
+def CreateVideoObject(url, title, summary, rating_key, playback_position, originally_available_at=None, duration=0, channel=None, container='mp2ts', include_container=False, includeExtras=0, includeRelated=0, includeRelatedCount=0):
 	Log('Date %s ' % originally_available_at)
 
 	if int(duration) <1:
@@ -336,7 +336,7 @@ def CreateVideoObject(url, title, summary, rating_key, playback_position, origin
 
 ####################################################################################################
 @route('/video/nextpvr/videoclipobject')
-def CreateVideoClipObject(url, title, summary, rating_key, channel=None, container='mp2ts', include_container=False):
+def CreateVideoClipObject(url, title, summary, rating_key, channel=None, container='mp2ts', include_container=False, includeExtras=0, includeRelated=0, includeRelatedCount=0):
 	
 	if not channel is None:
 		thumb = PVR_URL + 'services?method=channel.icon&channel_id=%s' % channel
